@@ -8,11 +8,13 @@ When('I click on a product', async function() {
 });
 
 When('I select a {word} color', async function(color) {
-    await productPage.clickColorOption(color);
+    // await productPage.clickColorOption(color);
+    await browser.debug();
 });
 
 When('I click the Add to Card button', async function() {
-    await productPage.addToCartButton.click();
+    // await productPage.addToCartButton.click();
+    await browser.debug();
 });
 
 When('I click the Proceed to checkout button', async function() {
@@ -32,6 +34,7 @@ When('I click remove button on cart', async function() {
     await productPage.removeButton.click();
 });
 
+// REVIEW: Calling this function 'Counter of the cart should be 1' would be more precise for what you are doing
 Then('Counter of the cart should increase by 1', async function() {
     await expect(productPage.counterNumber).toHaveText("1");
 });
